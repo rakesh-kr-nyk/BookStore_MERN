@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from './Home/Home';
-import Books from './components/Books';
+import Home from './home/Home.jsx';
+import Books from './components/Books.jsx';
 import { Navigate, Route, Routes } from "react-router-dom";
-import Signup from './components/Signup';
-import Login from './components/Login';
-import Contact from './components/Contact';
-import About from './components/About';
+import Signup from './components/Signup.jsx';
+import Login from './components/Login.jsx';
+import Contact from './components/Contact.jsx';
+import About from './components/About.jsx';
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthProvider.jsx';
-import BookDetail from "./Books/BookDetail.jsx";
+import BookDetail from "./books/BookDetail.jsx";
 
 function App() {
   const authContext = useAuth();
@@ -22,11 +22,11 @@ function App() {
       <div className='dark:bg-slate-900 dark:text-white'>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Books" element={authUser ? <Books /> : <Navigate to="/Signup" />} />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/books" element={authUser ? <Books /> : <Navigate to="/signup" />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/book/:name" element={<BookDetail />} />
         </Routes>
         <Toaster />
