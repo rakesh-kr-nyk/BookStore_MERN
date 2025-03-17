@@ -1,30 +1,4 @@
 # ✨ BookStore - MERN Stack Project
-
-Welcome to **BookStore**, a **MERN stack** application that allows users to browse, purchase, and download free or paid books. This project is built using **MongoDB, Express.js, React.js, and Node.js**.
-
-## 🌟 Features
-
-### **Frontend (React.js + Vite)**
-- 💡 Modern and **responsive UI** using Tailwind CSS
-- 📚 **Book Listing** with categories (Free & Paid)
-- 🔍 **Search & Filter** books
-- 👀 View detailed **book descriptions**
-- 🛍️ Add to **cart & checkout** (for paid books)
-- 🌜 **Dark Mode** support
-
-### **Backend (Node.js + Express.js + MongoDB)**
-- 🔄 **REST API** to manage books and users
-- 🛠️ Secure **User Authentication** (JWT-based login/signup)
-- 📂 **MongoDB Database** for book storage
-- 📏 Secure **file storage for PDFs**
-- 📧 **Email Notifications** for book purchases
-
-### **Admin Panel (Optional)**
-- 📖 **Add, Update & Delete Books**
-- 📊 Track **book sales & user activity**
-
-## 💪 Tech Stack
-
 | Technology  | Purpose  |
 |-------------|---------|
 | **React.js (Vite)** | Frontend UI |
@@ -46,3 +20,53 @@ BookStore/
 │   ├── config/     # Database & auth configs
 │── frontend/       # React.js + Vite App
 │   ├── src/
+│   │   ├── components/ # Reusable UI components
+│   │   ├── pages/ # Book pages, Home, Cart, etc.
+│── README.md       # Project documentation
+│── .gitignore      # Ignore unnecessary files
+│── package.json    # Dependencies & scripts
+```
+
+## 🚀 Installation & Setup
+
+### 🛠 Clone the Repository
+```sh
+git clone https://github.com/rakesh-kr-nyk/BookStore.git
+cd BookStore
+```
+
+### 🌐 Install Dependencies
+
+#### **Frontend**
+```sh
+cd frontend
+npm install
+npm run dev
+```
+
+#### **Backend**
+```sh
+cd backend
+npm install
+npm start
+```
+
+## 🌐 Live Demo
+[View Live Project](https://your-live-link.com)
+
+## 🌟 Future Improvements
+- 💡 **Wishlist Feature** - Save books for later
+- 🎬 **Book Reviews & Ratings** - User-generated reviews
+- 💳 **Payment Integration** - Razorpay/Stripe
+
+## 🙏 Contribution
+Feel free to **fork** this repository and **contribute**! Submit a pull request with your improvements.
+
+## 💌 Contact
+- 🌟 **Developer:** [Rakesh Nayak](https://github.com/rakesh-kr-nyk)
+- 📝 **GitHub Repo:** [BookStore](https://github.com/rakesh-kr-nyk/BookStore)
+
+---
+
+💪 **Thank you for checking out the project!** Happy Coding! 🚀
+
