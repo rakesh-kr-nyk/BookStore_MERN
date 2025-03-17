@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '/src/components/Navbar';
-import Footer from '/src/components/Footer';
-import Book from '/src/books/Book.jsx';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Book from '../books/Book';
 function Books() {
   return (
       <>

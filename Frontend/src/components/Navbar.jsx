@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Login from '/src/components/Login';
-import { useAuth } from '/src/context/AuthProvider.jsx';
+import Login from '../components/Login';
+import { useAuth } from '../context/AuthProvider';
 
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
@@ -32,9 +32,9 @@ function Navbar() {
   const navItems = (
     <>
       <li><a href='/'>Home</a></li>
-      <li><a href='/Books'>Books</a></li>
-      <li><a href='/Contact'>Contact</a></li>
-      <li><a href='/About'>About</a></li>
+      <li><a href='/books'>Books</a></li>
+      <li><a href='/contact'>Contact</a></li>
+      <li><a href='/about'>About</a></li>
     </>
   );
 

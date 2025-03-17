@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import Navbar from '/src/components/Navbar';
-import Footer from '/src/components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import axios from "axios";
 import toast from 'react-hot-toast';
 

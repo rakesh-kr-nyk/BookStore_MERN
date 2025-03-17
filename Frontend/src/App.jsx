@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from './home/Home.jsx';
-import Books from './components/Books.jsx';
+import Home from './home/Home';
+import Books from './components/Books';
 import { Navigate, Route, Routes } from "react-router-dom";
-import Signup from './components/Signup.jsx';
-import Login from './components/Login.jsx';
-import Contact from './components/Contact.jsx';
-import About from './components/About.jsx';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Contact from './components/Contact';
+import About from './components/About';
 import { Toaster } from 'react-hot-toast';
-import { useAuth } from './context/AuthProvider.jsx';
-import BookDetail from "./books/BookDetail.jsx";
+import { useAuth } from './context/AuthProvider';
+import BookDetail from "./books/BookDetail";
 
 function App() {
   const authContext = useAuth();

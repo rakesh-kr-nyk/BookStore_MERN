@@ -7,9 +7,9 @@ function Footer() {
       <footer className="footer footer-horizontal footer-center text-base-content rounded p-10 dark:bg-slate-900 dark:text-white">
               <nav className="grid grid-flow-col gap-4">
               <li><a href='/'>Home</a></li>
-      <li><a href='/Books'>Books</a></li>
-      <li><a href='/Contact'>Contact</a></li>
-      <li><a href='/About'>About</a></li>
+      <li><a href='/books'>Books</a></li>
+      <li><a href='/contact'>Contact</a></li>
+      <li><a href='/about'>About</a></li>
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">
