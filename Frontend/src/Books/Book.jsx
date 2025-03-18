@@ -20,16 +20,16 @@ function Books() {
   }, []);
 
   return (
-    <div className="max-w-screen-2xl container mx-auto pt-10 md:px-20 px-4">
-      <div className="text-center pt-12 space-y-5">
-        <h1 className="text-4xl">All Books Here <span className="text-[#62beff]">Free or Paid!</span></h1>
+    <div class="container mx-auto max-w-screen-2xl pt-10 px-4 md:px-20">
+      <div className="text-center space-y-5">
+        <h1 className="md:text-4xl text-3xl">All Books Here <span className="text-[#62beff]">Free or Paid!</span></h1>
         <p>Browse a collection of books available for free or purchase.</p>
         <Link to="/">
           <button className="button self-start">Back</button>
         </Link>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="mt-2 grid grid-cols-1 md:grid-cols-4 md:gap-4">
         {books.length > 0 ? (
           books.map((item) => <Cards key={item._id} item={item} />)
         ) : (

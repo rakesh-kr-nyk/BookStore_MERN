@@ -10,7 +10,7 @@ function Cards({ item }) {
       <Link to={`/book/${bookSlug}`} className="no-underline">
         <div className="card bg-base-100 w-80 shadow-md dark:shadow-sky-500 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-103 dark:bg-slate-900 dark:text-white">
           <figure>
-            <img className='h-52' src={item.image} alt="Book Cover" />
+            <img className='w-full h-52 object-cover' src={item.image} alt="Book Cover" />
           </figure>
           <div className="card-body">
             <h2 className="card-title font-medium">

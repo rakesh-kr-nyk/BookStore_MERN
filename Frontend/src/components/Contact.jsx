@@ -34,8 +34,8 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-slate-900">
-        <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div className="flex items-center justify-center bg-white dark:bg-slate-900 p-5">
+        <div className="w-full max-w-md p-8 mb-8 space-y-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
           <h2 className="text-2xl text-center text-gray-900 dark:text-white">
             Contact Us
           </h2>

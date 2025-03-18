@@ -18,6 +18,14 @@ body{
     color: #62beff !important;
 }
 
+.slick-dots {
+  margin-bottom: 10px !important;
+}
+
+.footer {
+  gap: 1.5rem 1rem !important;
+}
+
 li{
   list-style: none;
 }

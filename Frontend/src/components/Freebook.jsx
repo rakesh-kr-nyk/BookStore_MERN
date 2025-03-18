@@ -43,7 +43,7 @@ function Freebook() {
   return (
     <div className="max-w-screen-2xl mx-auto px-4 md:px-10 lg:px-20 py-5">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold">
+        <h1 className="text-3xl md:text-4xl">
           All <span className="text-[#62beff]">Free Books</span> Here!
         </h1>
         <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ function Freebook() {
       ) : error ? (
         <p className="text-center text-red-500 mt-10">{error}</p>
       ) : books.length > 0 ? (
-        <div className="mt-12">
+        <div className="mt-2">
           <Slider {...sliderSettings}>
             {books.map((item) => (
               <div key={item._id} className="px-2">

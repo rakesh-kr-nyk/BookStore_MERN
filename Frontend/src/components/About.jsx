@@ -6,8 +6,8 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-slate-900">
-        <div className="w-full max-w-2xl p-8 space-y-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div className="flex items-center justify-center bg-white dark:bg-slate-900 p-5">
+        <div className="w-full max-w-2xl p-8 mb-8 space-y-6 bg-white rounded-lg shadow-md dark:bg-gray-800 mb-5">
           <h2 className="text-3xl text-center text-gray-900 dark:text-white">About Us</h2>
           <p className="text-gray-700 dark:text-gray-300">
             Welcome to our bookstore! This project is developed as my final year BCA project by <strong>Rakesh Nayak</strong>. 
