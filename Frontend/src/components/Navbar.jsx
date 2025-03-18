@@ -39,7 +39,7 @@ function Navbar() {
   const navItems = (
     <>
       <li><a href='/'>Home</a></li>
-      <li><a href='/books'>Books</a></li>
+      <li><a href='/books'>All Books</a></li>
       <li><a href='/contact'>Contact</a></li>
       <li><a href='/about'>About</a></li>
     </>
@@ -114,7 +114,7 @@ function Navbar() {
                 {/* ✅ User Info Popup (Shown when clicked) */}
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg dark:bg-gray-800 rounded-lg p-3">
-                    <p className='text-sm text-gray-500'>Your Profile</p>
+                  <p className='text-sm text-gray-500'>Your Profile</p>
                   <p className="text-xs  text-gray-500">Name: {user?.fullname || "User"}</p>
                   <p className="text-xs text-gray-500">Email: {user?.email || "user@example.com"}</p>
                   <button 
