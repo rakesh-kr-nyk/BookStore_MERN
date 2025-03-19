@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/Cards";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Books() {
@@ -20,20 +19,23 @@ function Books() {
   }, []);
 
   return (
-    <div class="container mx-auto max-w-screen-2xl pt-10 px-4 md:px-20">
+    <div className="container mx-auto max-w-screen-2xl pt-10 px-4 md:px-10 lg:px-20">
       <div className="text-center space-y-5">
-        <h1 className="md:text-4xl text-3xl">All Books Here <span className="text-[#62beff]">Free or Paid!</span></h1>
-        <p>Browse a collection of books available for free or purchase.</p>
-        <Link to="/">
-          <button className="button self-start">Back</button>
-        </Link>
+        <h1 className="text-3xl md:text-4xl font-bold">
+          All Books Here <span className="text-[#62beff]">Free or Paid!</span>
+        </h1>
+        <p className="text-gray-600">Browse a collection of books available for free or purchase.</p>
       </div>
 
-      <div className="mt-2 grid grid-cols-1 md:grid-cols-4 md:gap-4">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-3 overflow-hidden mb-5">
         {books.length > 0 ? (
-          books.map((item) => <Cards key={item._id} item={item} />)
+          books.map((item) => (
+            <div key={item._id} className="w-full px-2">
+              <Cards item={item} />
+            </div>
+          ))
         ) : (
-          <p className="text-center col-span-4 text-gray-500">No books available</p>
+          <p className="text-center col-span-full text-gray-500">No books available</p>
         )}
       </div>
     </div>

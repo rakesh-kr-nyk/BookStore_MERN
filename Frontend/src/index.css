@@ -18,6 +18,34 @@ body{
     color: #62beff !important;
 }
 
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: #62beff !important;
+  font-size: 8px;
+}
+
+.dark .slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: #62beff !important;
+  font-size: 8px;
+}
+
+.dark .slick-dots li button:before {
+  color: #d5e1e9 !important;
+}
+.slick-dots li {
+ 
+  margin: 0 !important; 
+}
+
+.slick-next {
+  right: -12px !important;
+}
+
+.slick-prev {
+  left: -12px !important;
+}
+
 .slick-dots {
   margin-bottom: 10px !important;
 }

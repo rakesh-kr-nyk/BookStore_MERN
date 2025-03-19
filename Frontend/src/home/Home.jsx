@@ -1,15 +1,17 @@
 import React from 'react';
-import Navbar from '/src/components/Navbar';
-import Banner from '/src/components/Banner';
-import Freebook from '/src/components/Freebook';
-import Footer from '/src/components/Footer';
+import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import Freebook from '../components/Freebook';
+import Footer from '../components/Footer';
+import PaidBook from '../components/Paidbook';
 
 function Home() {
   return (
     <>
           <Navbar />
           <Banner />
-          <Freebook />
+      <Freebook />
+      <PaidBook />
           <Footer />
       </>
   );

@@ -22,7 +22,7 @@ function App() {
       <div className='dark:bg-slate-900 dark:text-white'>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/books" element={authUser ? <Books /> : <Navigate to="/signup" />} />
+          <Route path="/books" element={<Books />}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />

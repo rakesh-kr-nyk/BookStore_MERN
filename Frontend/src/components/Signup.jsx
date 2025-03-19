@@ -5,32 +5,40 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import axios from "axios";
 import toast from 'react-hot-toast';
-
 function Signup() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const userInfo = {
-      fullname:data.fullname,
-      email:data.email,
-      password:data.password,
-    }
-   await axios.post("http://localhost:4001/user/signup", userInfo)
-    .then((res) => {
-      console.log(res.data)
-      if (res.data) {
-        toast.success(' Signup Successfully!');
-      }
-      localStorage.setItem("Users", JSON.stringify(res.data.user));
-      navigate("/");
-    }).catch((err) => {
-      if (err.response) {
-        console.log(err);
-        toast.error("Error:" + err.response.data.message);
-      }
-    })
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+  
+    await axios.post("http://localhost:4001/user/signup", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success('Signup Successfully!');
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+  
+        // Retrieve stored page URL or default to homepage
+        const previousPage = localStorage.getItem("previousPage") || "/";
+        localStorage.removeItem("previousPage"); // Clear stored URL
+  
+        navigate(previousPage); // Redirect user back to previous page
+        window.location.reload();
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("Error: " + err.response.data.message);
+        }
+      });
   };
+  
 
   return (
     <>
@@ -102,7 +110,7 @@ function Signup() {
           {/* Additional Links */}
           <p className="text-sm text-center text-gray-600 dark:text-gray-400">
             Already have an account? {" "}
-            <Link to="/" className="text-blue-600 dark:text-blue-400 hover:underline">
+            <Link onClick={() => document.getElementById('my_modal_3').showModal()} className="text-blue-600 dark:text-blue-400 hover:underline">
               Login
             </Link>
           </p>

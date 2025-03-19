@@ -6,21 +6,34 @@ function Cards({ item }) {
   const bookSlug = item.name.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div className="my-6">
+    <div className="w-full max-w-xs mx-auto my-6 sm:max-w-sm md:max-w-md lg:max-w-lg">
       <Link to={`/book/${bookSlug}`} className="no-underline">
-        <div className="card bg-base-100 w-80 shadow-md dark:shadow-sky-500 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-103 dark:bg-slate-900 dark:text-white">
-          <figure>
-            <img className='w-full h-52 object-cover' src={item.image} alt="Book Cover" />
+        <div className="bg-white dark:bg-slate-900 shadow-md dark:shadow-sky-500 rounded-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
+          <figure className="w-full">
+            <img 
+              className="w-full h-52 object-cover"
+              src={item.image} 
+              alt="Book Cover" 
+            />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title font-medium">
+          <div className="p-4">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-white flex justify-between items-center">
               {item.name}
-              <div className="badge badge-secondary font-medium">{item.category}</div>
+              <span className="bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-300 text-xs px-2 py-1 rounded-md">
+                {item.category}
+              </span>
             </h2>
-            <p>{item.title}</p>
-            <div className="card-actions flex justify-between">
-              <div className="px-2 py-1 bg-green-500 text-white rounded-md">${item.price}</div> 
-              <div className="px-2 py-1 bg-blue-500 text-white rounded-md">Buy Now</div>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">{item.title}</p>
+            <div className="flex justify-between items-center mt-4">
+              {item.price === 0 ? (
+                <div className="px-3 py-1 bg-green-500 text-white text-sm rounded-md cursor-pointer hover:bg-green-600">
+                  View PDF
+                </div>
+              ) : (
+                <div className="px-3 py-1 bg-blue-500 text-white text-sm rounded-md cursor-pointer hover:bg-blue-600">
+                  Buy Now
+                </div>
+              )}
             </div>
           </div>
         </div>

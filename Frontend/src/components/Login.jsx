@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from 'react-hot-toast';
@@ -6,41 +6,45 @@ import toast from 'react-hot-toast';
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const modalRef = useRef(null);
+  const [closing, setClosing] = useState(false);
 
   const onSubmit = async (data) => {
     const userInfo = {
-      email:data.email,
-      password:data.password,
-    }
-   await axios.post("http://localhost:4001/user/login", userInfo)
-    .then((res) => {
-      console.log(res.data)
-      if (res.data) {
-        toast.success('Login Successfully!');
-        window.location.reload();
-      }
-      localStorage.setItem("Users", JSON.stringify(res.data.user));
-     // ✅ Close the modal
-      closeModal();
-      
-    }).catch((err) => {
-      if (err.response) {
-        toast.error("Error:" + err.response.data.message);
-      }
-    })
+      email: data.email,
+      password: data.password,
+    };
+    
+    await axios.post("http://localhost:4001/user/login", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success('Login Successfully!');
+          window.location.reload();
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+        closeModal();
+      }).catch((err) => {
+        if (err.response) {
+          toast.error("Error: " + err.response.data.message);
+        }
+      });
   };
 
   const closeModal = () => {
-    if (modalRef.current) {
-      modalRef.current.close();
-    }
+    setClosing(true); // Start fade-out animation
+    setTimeout(() => {
+      if (modalRef.current) {
+        modalRef.current.close();
+        setClosing(false); // Reset for next use
+      }
+    }, 300); // Matches the CSS transition time
   };
 
   return (
     <>
       <div>
-        <dialog ref={modalRef} id="my_modal_3" className="modal">
-          <div className="modal-box dark:bg-slate-900">
+        <dialog ref={modalRef} id="my_modal_3" className={`modal bg-white/30 backdrop-blur-xs transition-opacity duration-300 ${closing ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="modal-box dark:bg-slate-900 transition-transform duration-300 transform scale-100">
             {/* Close Button */}
             <button 
               onClick={closeModal} 
@@ -99,8 +103,9 @@ function Login() {
 
                 <p className="text-sm text-center text-gray-600 dark:text-gray-400">
                   Don't have an account?{" "}
-                  <a href="/Signup" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  <a href="/Signup" className="text-blue-600 dark:text-blue-400 hover:underline" onClick={() => localStorage.setItem("previousPage", window.location.pathname)}>
                     Sign up
+                  
                   </a>
                 </p>
               </div>
