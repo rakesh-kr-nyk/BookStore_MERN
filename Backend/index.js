@@ -6,6 +6,7 @@ import bookRoute from "./route/book.route.js";
 import userRoute from "./route/user.route.js";
 import contactRoute from "./route/contact.route.js";  // Import contact route
 import path from "path";
+import paymentRoutes from "./route/payment.js";
 const app = express();
 
 app.use(cors());
@@ -17,7 +18,6 @@ dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
-
 // Connect to MongoDB
 mongoose
     .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -29,9 +29,15 @@ app.use("/book", bookRoute);
 app.use("/user", userRoute);
 app.use("/contact", contactRoute); // Add contact route
 
+// Use the payment API route
+app.use("/api", paymentRoutes);
+
+
 app.use(express.static(path.join(_dirname, "/Frontend/dist")));
 app.get('*', (_, res) => { res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html")) });
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+
+    
 });
