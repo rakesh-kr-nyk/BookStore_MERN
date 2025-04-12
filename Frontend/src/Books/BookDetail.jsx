@@ -21,7 +21,7 @@ function BookDetail() {
 
         const user = JSON.parse(localStorage.getItem("Users"));
         if (user) {
-          const purchaseId = `purchasedBooks_${user.id}`;
+          const purchaseId = `purchasedBooks_${user._id}`;
           const purchasedBooks = JSON.parse(localStorage.getItem(purchaseId)) || [];
           if (purchasedBooks.includes(res.data.name)) {
             setIsPurchased(true);
@@ -67,7 +67,7 @@ function BookDetail() {
 
   const startPayment = async (userId) => {
     try {
-      const res = await axios.post("http://localhost:4001/api/create-order", {
+      const res = await axios.post("http://localhost:4001/payments/create-order", {
         amount: book.price,
       });
 
