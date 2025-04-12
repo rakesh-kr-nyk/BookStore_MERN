@@ -1,10 +1,13 @@
 import Razorpay from "razorpay";
 import express from "express";
 import cors from "cors";
+import { savePayment, getPayments } from "../controller/payment.controller.js";
 
 const router = express.Router();
 router.use(cors());
 router.use(express.json());
+router.post("/save", savePayment);  // Route to save payment details
+router.get("/all", getPayments);    // Route to fetch all payments
 
 // Replace with your actual Razorpay credentials
 const razorpay = new Razorpay({
@@ -22,7 +25,7 @@ router.post("/create-order", async (req, res) => {
     }
 
     const order = await razorpay.orders.create({
-      amount: amount, // Razorpay expects amount in paise
+      amount: amount*100, // Razorpay expects amount in paise
       currency: "INR",
       payment_capture: 1,
     });
